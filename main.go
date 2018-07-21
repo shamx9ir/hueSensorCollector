@@ -85,8 +85,9 @@ func main() {
 		log.Fatalf("Failed to create client: %v", err)
 	}
 
-	for  { 	// do read every 5 mins
+	for  { 	// do read every 10 mins
 		for _, sensor := range sensors {
+			sensor.Refresh()
 			if sensor.Type == "ZLLTemperature" {
 				fmt.Println(sensor.Name, ":", float32(sensor.State.Temperature) / 100, "C")
 				sensorId := strings.Split(sensor.UniqueID, "-")[0]
@@ -94,7 +95,7 @@ func main() {
 			}
 		}
 
-		time.Sleep(time.Minute * 5)
+		time.Sleep(time.Minute * 10)
 	}
 }
 

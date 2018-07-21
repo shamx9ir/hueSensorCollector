@@ -4,7 +4,7 @@ Application that connects to Hue sensors through Hue bridge and collect temperat
 ## Application Details
 - Written in Golang.
 - Intended to be run in RasberryPi, batch file included to run build in Windows and target ARM/Linux.
-- Data collected every 5 minutes and saved in Google Cloud Platform Datastore using Go Cloud Datastore package(https://godoc.org/cloud.google.com/go/datastore)
+- Data collected every 10 minutes and saved in Google Cloud Platform Datastore using Go Cloud Datastore package(https://godoc.org/cloud.google.com/go/datastore)
 - Configuration files:
   - user.txt - created automatically during login to Hue bridge
   - gcpproject.txt - Create this file with your gcp project id
